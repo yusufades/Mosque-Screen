@@ -7,8 +7,8 @@ class SunriseAndZawwal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sunrise: this.getSunrise(),
-      zawwal: this.getZawwal()
+      sunrise: this.getSunrise()
+      // zawwal: this.getZawwal()
     };
   }
 
@@ -37,13 +37,13 @@ class SunriseAndZawwal extends Component {
           <thead>
             <tr>
               <th>Sunrise</th>
-              <th>Zawwal</th>
+              {/*<th>Zawwal</th>*/}
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>{this.state.sunrise}</td>
-              <td>{this.state.zawwal}</td>
+              {/*<td>{this.state.zawwal}</td>*/}
             </tr>
           </tbody>
         </table>
