@@ -28,16 +28,22 @@ class JummahTimes extends Component {
   }
 
   getJummahTimes() {
-    var summerTimes = {
-      slot_1: this.state._appConfig.get('Jummah_slot_1_summer'),
-      slot_2: this.state._appConfig.get('Jummah_slot_2_summer')
-    };
+    const season = this.getDST() ? 'summer' : 'winter';
+    const jummahNumbers =
+      parseInt(this.state._appConfig.get('Jummah_slot_count')) ?? 0;
+    return [...Array(jummahNumbers)]
+      .map((_, i) =>
+        this.state._appConfig.get(`Jummah_slot_${i + 1}_${season}`)
+      )
+      .filter(time => !!time);
+  }
 
-    var winterTimes = {
-      slot_1: this.state._appConfig.get('Jummah_slot_1_winter'),
-      slot_2: this.state._appConfig.get('Jummah_slot_2_winter')
-    };
-    return this.getDST() ? summerTimes : winterTimes;
+  getJummahLabels() {
+    const jummahNumbers =
+      parseInt(this.state._appConfig.get('Jummah_slot_count')) ?? 0;
+    return [...Array(jummahNumbers)].map((_, i) =>
+      this.state._appConfig.get(`Jummah_slot_${i + 1}_label`)
+    );
   }
 
   render() {
@@ -47,15 +53,17 @@ class JummahTimes extends Component {
           <thead>
             <tr>
               <th />
-              <th>{this.state._appConfig.get('Jummah_slot_1_label')}</th>
-              <th>{this.state._appConfig.get('Jummah_slot_2_label')}</th>
+              {this.getJummahLabels().map((label, i) => (
+                <th key={i}>{label}</th>
+              ))}
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Jumu‘ah</td>
-              <td>{this.getJummahTimes()['slot_1']}</td>
-              <td>{this.getJummahTimes()['slot_2']}</td>
+              {this.getJummahTimes().map((time, i) => (
+                <td key={i}>{time}</td>
+              ))}
             </tr>
           </tbody>
         </table>
