@@ -82,26 +82,26 @@ class PrayerTimesWeekAhead extends Component {
             <tr>
               <td />
               {/* FAJR */}
-              <td>Begins</td>
-              <td>Jama'ah</td>
+              <td>Adhan</td>
+              <td>Iqamah</td>
               <td>Sunrise</td>
 
               {/* ZUHR */}
-              <td>Begins</td>
-              <td>Jama'ah</td>
+              <td>Adhan</td>
+              <td>Iqamah</td>
 
               {/* ASR */}
               <td>Mithl 1</td>
               <td>Mithl 2</td>
-              <td>Jama'ah</td>
+              <td>Iqamah</td>
 
               {/* MAGHRIB */}
-              <td>Begins</td>
-              <td>Jama'ah</td>
+              <td>Adhan</td>
+              <td>Iqamah</td>
 
               {/* ISHA */}
-              <td>Begins</td>
-              <td>Jama'ah</td>
+              <td>Adhan</td>
+              <td>Iqamah</td>
             </tr>
             {rows}
           </tbody>

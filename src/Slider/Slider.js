@@ -44,7 +44,7 @@ class Slider extends Component {
   }
 
   getSlides() {
-    return [<View1 />, <View2 />, <View3 />, <View4 />, <View6 />];
+    return [<View1 />, <View2 />, <View3 />, <View6 />];
   }
 
   next() {
