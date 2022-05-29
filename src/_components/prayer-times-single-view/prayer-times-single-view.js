@@ -81,8 +81,8 @@ class PrayerTimesSingleView extends Component {
           <thead>
             <tr>
               <th />
-              <th>Begins</th>
-              <th>Jama'ah</th>
+              <th>Adhan</th>
+              <th>Iqamah</th>
               <th>Tomorrow</th>
             </tr>
           </thead>
